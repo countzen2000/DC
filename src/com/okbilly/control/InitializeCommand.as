@@ -1,5 +1,11 @@
 package com.okbilly.control
 {
+	import com.okbilly.components.DropDown;
+	import com.okbilly.components.Header;
+	import com.okbilly.components.NavMenu;
+	import com.okbilly.view.DropDownMediator;
+	import com.okbilly.view.HeaderMediator;
+	import com.okbilly.view.NavMediator;
 	import com.okbilly.view.StageMediator;
 	
 	import flash.display.Stage;
@@ -17,8 +23,19 @@ package com.okbilly.control
 		
 		override public function execute (note:INotification):void
 		{
+			var header:Header = new Header();
+			var headerMediator:HeaderMediator = new HeaderMediator(header);
+			facade.registerMediator(headerMediator);
+			
+			facade.registerMediator(new NavMediator(new NavMenu()));
+			
+			var dropDown:DropDown = new DropDown();
+			facade.registerMediator(new DropDownMediator(dropDown));
+			
 			var stage:Stage = note.getBody() as Stage;
 			facade.registerMediator(new StageMediator(stage));
+			
+			
 		}
 	}
 }
