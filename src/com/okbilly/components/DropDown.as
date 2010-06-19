@@ -53,6 +53,7 @@ package com.okbilly.components
 		}
 	}
 }
+import com.greensock.TweenLite;
 import com.okbilly.model.dto.ItemDTO;
 import com.okbilly.utilities.EmbededTextField;
 
@@ -60,6 +61,7 @@ import flash.display.Loader;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+import flash.filters.BlurFilter;
 import flash.filters.GlowFilter;
 import flash.net.URLRequest;
 import flash.system.LoaderContext;
@@ -73,6 +75,8 @@ internal class Item extends Sprite
 	private var _imageHolder:Sprite;
 	private var _hitArea:Sprite;
 	private var _loader:Loader;
+	
+	private var _loadingText:EmbededTextField;
 	
 	public function Item(data:ItemDTO)
 	{
@@ -97,6 +101,12 @@ internal class Item extends Sprite
 		_imageHolder.y = _text.y + 35;
 		this.addChild(_imageHolder);
 		
+		_loadingText = new EmbededTextField(false, 10, 0xFFFFFF);
+		_loadingText.text = "Loading...";
+		_loadingText.x = this.width/2 - _loadingText.textWidth/2;
+		_loadingText.y = _imageHolder.y + _imageHolder.height/2 - _loadingText.height/2;
+		this.addChild(_loadingText);
+		
 		_loader = new Loader();
 		_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaded);
 		_loader.load(new URLRequest(_data.url), new LoaderContext());
@@ -116,9 +126,16 @@ internal class Item extends Sprite
 	
 	private function onLoaded(e:Event):void
 	{
+		if (this.contains(_loadingText)) {
+			TweenLite.to(_loadingText, .5, {alpha:0, blurFilter:{blurX:20}});
+		}
+		_loader.alpha = 0;
+		_loader.filters = [new BlurFilter(20, 0)];
 		_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onLoaded);
 		_imageHolder.addChild(_loader);
 		_loader.x = _imageHolder.width/2 - _loader.width/2;
 		_loader.y = _imageHolder.height/2 - _loader.height/2;
+		
+		TweenLite.to(_loader, .5, {alpha:1, blurFilter:{blurX:0}});
 	}
 }
