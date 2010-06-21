@@ -38,7 +38,6 @@ package com.okbilly.view
 		private function onMenuItemChoosen(e:DynamicEvent):void
 		{
 			e.stopImmediatePropagation();
-			trace (e.data.name);	
 			this.sendNotification(MainFacade.MENU_SELECTED, e.data);
 		}
 		

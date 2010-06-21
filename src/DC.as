@@ -1,5 +1,7 @@
 package
 {
+	import com.greensock.plugins.BlurFilterPlugin;
+	import com.greensock.plugins.TweenPlugin;
 	import com.okbilly.MainFacade;
 	
 	import flash.display.Sprite;
@@ -16,6 +18,8 @@ package
 			
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
+			
+			TweenPlugin.activate([BlurFilterPlugin]);
 			
 			MainFacade.getInstance().init( this.stage );
 		}

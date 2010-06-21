@@ -28,6 +28,9 @@ package com.okbilly.view
 		{
 			switch (notification.getName()) {
 				case MainFacade.MENU_SELECTED:
+					if (drop.y == 125) {
+						hideDrop();
+					}
 					drop.build((notification.getBody() as MenuDTO).Items);
 					showDrop();
 					break;
