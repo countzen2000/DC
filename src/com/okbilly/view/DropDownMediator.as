@@ -6,6 +6,8 @@ package com.okbilly.view
 	import com.okbilly.components.DropDown;
 	import com.okbilly.model.dto.MenuDTO;
 	
+	import flash.utils.setTimeout;
+	
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -29,10 +31,14 @@ package com.okbilly.view
 			switch (notification.getName()) {
 				case MainFacade.MENU_SELECTED:
 					if (drop.y == 125) {
+						drop.hide()
 						hideDrop();
+						setTimeout(drop.build, 1200, (notification.getBody() as MenuDTO).Items);
+						setTimeout(showDrop, 700);
+					} else {
+						setTimeout(drop.build, 500, (notification.getBody() as MenuDTO).Items);
+						showDrop();
 					}
-					drop.build((notification.getBody() as MenuDTO).Items);
-					showDrop();
 					break;
 			}	
 		}

@@ -1,10 +1,12 @@
 package com.okbilly.components
 {
+	import com.greensock.TweenLite;
 	import com.okbilly.model.dto.ItemDTO;
 	
 	import flash.display.Bitmap;
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
+	import flash.filters.BlurFilter;
 	
 	public class DropDown extends Sprite
 	{
@@ -21,6 +23,17 @@ package com.okbilly.components
 			_bg = new Sprite();
 			_bg.addChild(new BG() as Bitmap);
 			this.addChild(_bg);
+		}
+		
+		public function hide():void
+		{
+			if (_items.length > 0) {
+				for each (var toremove:Item in _items)
+				{
+					TweenLite.to(toremove, .3, {alpha:0, blurFilter:{blurX:20} });
+				}
+			}
+			_items = [];
 		}
 		
 		public function build(data:Array):void
@@ -61,9 +74,11 @@ import flash.display.Loader;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+import flash.external.ExternalInterface;
 import flash.filters.BlurFilter;
 import flash.filters.GlowFilter;
 import flash.net.URLRequest;
+import flash.net.navigateToURL;
 import flash.system.LoaderContext;
 import flash.text.TextFieldAutoSize;
 
@@ -111,8 +126,9 @@ internal class Item extends Sprite
 		_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaded);
 		_loader.load(new URLRequest(_data.url), new LoaderContext());
 	
-		this.addEventListener(MouseEvent.ROLL_OVER, onOver);
-		this.addEventListener(MouseEvent.ROLL_OUT, onOut);
+		this.addEventListener(MouseEvent.ROLL_OVER, onOver, true, 0, false);
+		this.addEventListener(MouseEvent.ROLL_OUT, onOut, true, 0, false);
+		this.addEventListener(MouseEvent.CLICK, onClick, true, 0, false);
 	}
 	
 	private function onOver(e:Event):void
@@ -122,6 +138,13 @@ internal class Item extends Sprite
 	private function onOut(e:Event):void
 	{
 		this.filters = [];
+	}
+	
+	private function onClick(e:Event):void
+	{
+		if (_data.linkURL && _data.linkURL != "") {
+			navigateToURL(new URLRequest(_data.linkURL), "_self");
+		}
 	}
 	
 	private function onLoaded(e:Event):void

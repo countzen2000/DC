@@ -15,6 +15,7 @@ package com.okbilly
 		public static var instance:MainFacade
 		public static const INIT:String = "InitialzeCOmmand";
 		public static const MENU_SELECTED:String = "MenuItemSelected"; 
+		public static const DATA_READY:String = "DataReady";
 		
 		public function MainFacade()
 		{
@@ -36,13 +37,6 @@ package com.okbilly
 			super.initializeController();
 			registerCommand(INIT, InitializeCommand);
 			
-		/*//For startup Sequence--Startup Manager
-			registerCommand(STAT_DATA_LOADED, StartupResourceLoadedCommand);
-			registerCommand(GRAPH_DATA_LOADED, StartupResourceLoadedCommand);
-			registerCommand(NAME_DATA_LOADED, StartupResourceLoadedCommand);
-			registerCommand(TOTALS_BROKE_DOWN, StartupResourceLoadedCommand);
-			
-			registerCommand(NO_DATA, StartupResourceFailedCommand);*/
 		}
 		
 		public function init( stage:Object ):void

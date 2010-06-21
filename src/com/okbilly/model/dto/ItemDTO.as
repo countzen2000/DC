@@ -6,14 +6,21 @@ package com.okbilly.model.dto
 		
 		public var name:String;
 		public var url:String;
+		public var linkURL:String;
 		
-		public function ItemDTO(data:Object)
+		public function ItemDTO(data:*)
 		{
 			if (!data) return;
-			
-			key = data.id;
-			name = data.name;
-			url = data.url;
+			if (data is XML) {
+				key = data.@id;
+				name = data.@name;
+				url = data.imageurl;
+				linkURL = data.linkurl;
+			} else {
+				key = data.id;
+				name = data.name;
+				url = data.url;
+			}
 		}
 	}
 }

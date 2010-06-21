@@ -7,12 +7,22 @@ package com.okbilly.model.dto
 		
 		public var Items:Array = [];
 		
-		public function MenuDTO(data:Object)
+		public function MenuDTO(data:*)
 		{
 			if (!data) return;
 			
-			key = data.id;
-			name = data.name;
+			if (data is XML) {
+				key = data.@id;
+				name = data.@name;
+			
+				for each (var item:XML in data.item)
+				{
+					Items.push(new ItemDTO(item));
+				}	
+			} else {
+				key = data.id;
+				name = data.name;
+			}
 		}
 	}
 }

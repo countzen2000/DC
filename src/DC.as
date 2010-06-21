@@ -11,6 +11,8 @@ package
 	
 	public class DC extends Sprite
 	{
+		public static var externalXML:String = "";
+		
 		public function DC()
 		{
 			Security.allowDomain("*");
@@ -20,6 +22,12 @@ package
 			stage.align = StageAlign.TOP_LEFT;
 			
 			TweenPlugin.activate([BlurFilterPlugin]);
+			
+			if (this.loaderInfo.parameters.xmlURL) {
+				externalXML = this.loaderInfo.parameters.xmlURL as String;
+			} else {
+				externalXML = "http://hwhat.com/dc/xml/sample.xml";	
+			}
 			
 			MainFacade.getInstance().init( this.stage );
 		}

@@ -3,6 +3,7 @@ package com.okbilly.control
 	import com.okbilly.components.DropDown;
 	import com.okbilly.components.Header;
 	import com.okbilly.components.NavMenu;
+	import com.okbilly.model.NavProxy;
 	import com.okbilly.view.DropDownMediator;
 	import com.okbilly.view.HeaderMediator;
 	import com.okbilly.view.NavMediator;
@@ -23,6 +24,8 @@ package com.okbilly.control
 		
 		override public function execute (note:INotification):void
 		{
+			facade.registerProxy(new NavProxy());
+			
 			var header:Header = new Header();
 			var headerMediator:HeaderMediator = new HeaderMediator(header);
 			facade.registerMediator(headerMediator);

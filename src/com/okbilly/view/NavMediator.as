@@ -25,6 +25,11 @@ package com.okbilly.view
 		
 		override public function onRegister():void
 		{
+			
+		}
+		
+		public function build():void
+		{
 			_navProxy = facade.retrieveProxy(NavProxy.NAME) as NavProxy;
 			if (_navProxy == null) {
 				_navProxy = new NavProxy();

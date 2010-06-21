@@ -37,11 +37,11 @@
             var swfVersionStr = "10.0.0";
             <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
             var xiSwfUrlStr = "playerProductInstall.swf";
-            var flashvars = {};
+            var flashvars = {xmlURL:"http://hwhat.com/dc/xml/sample.xml"};
             var params = {};
             params.quality = "high";
             params.bgcolor = "#ffffff";
-            params.allowscriptaccess = "sameDomain";
+            params.allowscriptaccess = "always";
             params.allowfullscreen = "true";
             var attributes = {};
             attributes.id = "DC";
@@ -75,13 +75,13 @@
 	   	
        	<noscript>
             <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="DC">
-                <param name="movie" value="DC.swf" />
+                <param name="movie" value="DC.swf?xmlURL=http://hwhat.com/dc/xml/sample.xml" />
                 <param name="quality" value="high" />
                 <param name="bgcolor" value="#ffffff" />
-                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowScriptAccess" value="always" />
                 <param name="allowFullScreen" value="true" />
                 <!--[if !IE]>-->
-                <object type="application/x-shockwave-flash" data="DC.swf" width="100%" height="100%">
+                <object type="application/x-shockwave-flash" data="DC.swf?xmlURL=http://hwhat.com/dc/xml/sample.xml" width="100%" height="100%">
                     <param name="quality" value="high" />
                     <param name="bgcolor" value="#ffffff" />
                     <param name="allowScriptAccess" value="sameDomain" />
