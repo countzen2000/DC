@@ -104,8 +104,10 @@ internal class Item extends Sprite
 		
 		_text = new EmbededTextField(false, 12);
 		_text.text = _data.name;
-		_text.multiline = _text.wordWrap = true;
 		_text.autoSize = TextFieldAutoSize.CENTER;
+		_text.width = 125;
+		_text.multiline = _text.wordWrap = true;
+		
 		_text.x = this.width/2 - _text.textWidth/2;
 		this.addChild(_text);
 		
