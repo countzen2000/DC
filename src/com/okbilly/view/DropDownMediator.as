@@ -1,7 +1,11 @@
 package com.okbilly.view
 {
 	import com.greensock.TweenLite;
+	import com.greensock.easing.Expo;
 	import com.greensock.easing.Quad;
+	import com.greensock.easing.Quint;
+	import com.greensock.easing.RoughEase;
+	import com.greensock.easing.Strong;
 	import com.okbilly.MainFacade;
 	import com.okbilly.components.DropDown;
 	import com.okbilly.model.dto.MenuDTO;
@@ -33,10 +37,10 @@ package com.okbilly.view
 					if (drop.y == 125) {
 						drop.hide()
 						hideDrop();
-						setTimeout(drop.build, 1200, (notification.getBody() as MenuDTO).Items);
-						setTimeout(showDrop, 700);
+						setTimeout(drop.build, 150, (notification.getBody() as MenuDTO).Items);
+						setTimeout(showDrop, 100);
 					} else {
-						setTimeout(drop.build, 500, (notification.getBody() as MenuDTO).Items);
+						setTimeout(drop.build, 300, (notification.getBody() as MenuDTO).Items);
 						showDrop();
 					}
 					break;
@@ -45,12 +49,14 @@ package com.okbilly.view
 		
 		public function showDrop():void
 		{
-			TweenLite.to(drop, .7, {y: 125, ease:Quad.easeOut});
+			TweenLite.to(drop, .3, {y: 125});
+			//drop.y = 125;
 		}
 		
 		public function hideDrop():void
 		{
-			TweenLite.to(drop, .7, {y: 0, ease:Quad.easeOut});
+			//TweenLite.to(drop, .1, {y: 0, ease:Quad.easeOut});
+			drop.y = 0;
 		}
 		
 		public function get drop():DropDown

@@ -19,7 +19,7 @@ package com.okbilly.view
 		public static const NAME:String = "stageMediator";
 		
 		
-		private var _bg:Background;
+		//private var _bg:Background;
 		
 		public function StageMediator(viewComponent:Object=null)
 		{
@@ -43,7 +43,7 @@ package com.okbilly.view
 		private function onDataReady():void
 		{
 			var header:Header = (facade.retrieveMediator(HeaderMediator.NAME) as HeaderMediator).header;
-			header.x = stage.stageWidth/2 - header.width/2;
+			//header.x = stage.stageWidth/2 - header.width/2;
 			stage.addChild(header);
 			
 			var nav:NavMenu = (facade.retrieveMediator(NavMediator.NAME) as NavMediator).nav;
@@ -60,10 +60,10 @@ package com.okbilly.view
 		
 		override public function onRegister() : void
 		{
-			this.stage.addEventListener(Event.RESIZE, onResize);
+			//this.stage.addEventListener(Event.RESIZE, onResize);
 			
-			_bg = new Background(stage.stageWidth, stage.stageHeight);
-			stage.addChild(_bg);
+			//_bg = new Background(stage.stageWidth, stage.stageHeight);
+			//stage.addChild(_bg);
 		
 			//Some sort of loading bar for XML	
 		}
