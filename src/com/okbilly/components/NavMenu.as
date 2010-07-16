@@ -18,6 +18,9 @@ package com.okbilly.components
 		
 		private var _navArrary:Array = [];
 		
+		private var _mask:Sprite;
+		
+		
 		public function NavMenu()
 		{
 			super();
@@ -27,7 +30,19 @@ package com.okbilly.components
 			this.addChild(_bg);
 			
 			_navItemHolder = new Sprite();
+			_navItemHolder.cacheAsBitmap = true;
 			this.addChild(_navItemHolder);
+			
+			_mask = new Sprite();
+			_mask.addChild(new NavBar() as Bitmap);
+			_mask.scaleY = .8;
+			_mask.width -= 4;
+			_mask.y = 3;
+			_mask.x = 3;
+			_mask.cacheAsBitmap = true;
+			this.addChild(_mask);
+			
+			_navItemHolder.mask = _mask;
 		}
 		
 		public function build(data:Array):void

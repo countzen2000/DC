@@ -52,7 +52,7 @@ package com.okbilly.components
 				var temp:Item = new Item(item);
 				
 				if (previous) {
-					temp.x = previous.x + previous.width + 12;	
+					temp.x = previous.x + previous.width + 6;	
 				} else {
 					temp.x = 20;
 				}
@@ -67,6 +67,10 @@ package com.okbilly.components
 	}
 }
 import com.greensock.TweenLite;
+import com.greensock.easing.Back;
+import com.greensock.easing.Bounce;
+import com.greensock.easing.Elastic;
+import com.greensock.easing.Expo;
 import com.okbilly.model.dto.ItemDTO;
 import com.okbilly.utilities.EmbededTextField;
 
@@ -81,6 +85,9 @@ import flash.net.URLRequest;
 import flash.net.navigateToURL;
 import flash.system.LoaderContext;
 import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
+
+import flashx.textLayout.formats.TextAlign;
 
 internal class Item extends Sprite
 {
@@ -90,6 +97,7 @@ internal class Item extends Sprite
 	private var _imageHolder:Sprite;
 	private var _hitArea:Sprite;
 	private var _loader:Loader;
+	private var _loadingTextHolder:Sprite;
 	
 	private var _loadingText:EmbededTextField;
 	
@@ -103,34 +111,53 @@ internal class Item extends Sprite
 		this.addChild(_hitArea);
 		
 		_text = new EmbededTextField(false, 12);
+		//_text.background = true;
+		//_text.backgroundColor = 0xFFFFFF;
+		_text.wordWrap = true;		
 		_text.text = _data.name;
-		_text.autoSize = TextFieldAutoSize.CENTER;
-		_text.width = 125;
-		_text.multiline = _text.wordWrap = true;
+		_text.setTextFormat(new TextFormat(null, null, null, null, null, null, null, null, TextAlign.CENTER));
+		if (_text.textWidth > 125) {
+			_text.width = 125;	
+		}
+		 
 		
-		_text.x = this.width/2 - _text.textWidth/2;
+		_text.x = this.width/2 - _text.width/2;
+		
 		this.addChild(_text);
 		
 		_imageHolder = new Sprite();
 		_imageHolder.graphics.beginFill(0x123456, 0);
-		_imageHolder.graphics.drawRect(0,0,	90, 90);
+		_imageHolder.graphics.drawRect(0,0,	125, 90);
 		_imageHolder.x = this.width/2 - _imageHolder.width/2;
 		_imageHolder.y = _text.y + 35;
 		this.addChild(_imageHolder);
 		
-		_loadingText = new EmbededTextField(false, 10, 0xFFFFFF);
-		_loadingText.text = "Loading...";
-		_loadingText.x = this.width/2 - _loadingText.textWidth/2;
-		_loadingText.y = _imageHolder.y + _imageHolder.height/2 - _loadingText.height/2;
-		this.addChild(_loadingText);
+		_loadingText = new EmbededTextField(false, 15, 0xFFFFFF);
+		_loadingText.text = "Loading....";
+		_loadingTextHolder = new Sprite();
+		_loadingTextHolder.addChild(_loadingText);
+		_loadingText.x = -_loadingText.textWidth/2;
+		_loadingText.y = -_loadingText.textHeight/2;
+		
+		_loadingTextHolder.x = _imageHolder.width/2;
+		_loadingTextHolder.y = _imageHolder.y + _imageHolder.height/2;
+		this.addChild(_loadingTextHolder);
 		
 		_loader = new Loader();
 		_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaded);
 		_loader.load(new URLRequest(_data.url), new LoaderContext());
-	
+
 		this.addEventListener(MouseEvent.ROLL_OVER, onOver, true, 0, false);
 		this.addEventListener(MouseEvent.ROLL_OUT, onOut, true, 0, false);
 		this.addEventListener(MouseEvent.CLICK, onClick, true, 0, false);
+		
+		this.addEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
+	}
+	
+	private function onRemoved(e:Event):void
+	{
+		this.removeEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
+		_loader.unload();
 	}
 	
 	private function onOver(e:Event):void
@@ -150,17 +177,40 @@ internal class Item extends Sprite
 	}
 	
 	private function onLoaded(e:Event):void
-	{
-		if (this.contains(_loadingText)) {
-			TweenLite.to(_loadingText, .5, {alpha:0, blurFilter:{blurX:20}});
-		}
-		_loader.alpha = 0;
-		_loader.filters = [new BlurFilter(20, 0)];
-		_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onLoaded);
-		_imageHolder.addChild(_loader);
-		_loader.x = _imageHolder.width/2 - _loader.width/2;
-		_loader.y = _imageHolder.height/2 - _loader.height/2;
+	{		
 		
-		TweenLite.to(_loader, .5, {alpha:1, blurFilter:{blurX:0}});
+		_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onLoaded);
+		while (_loader.width > 125) {
+			_loader.scaleX -= .1;
+			_loader.scaleY -= .1;
+		}
+		_loader.x = -_loader.width/2;
+		_loader.y = -_loader.height/2;
+		
+		var _loaderHolder:Sprite = new Sprite();
+		_loaderHolder.x = _loader.width/2;
+		_loaderHolder.y = _loader.height/2;
+		_loaderHolder.addChild(_loader);
+		
+		_loaderHolder.scaleX = _loaderHolder.scaleY =  0;
+		
+		_imageHolder.addChild(_loaderHolder);
+		
+		_loaderHolder.x = _imageHolder.width/2
+		_loaderHolder.y = _imageHolder.height/2
+		
+		
+		if (this.contains(_loadingText)) {
+			TweenLite.to(_loadingTextHolder, .4, {scaleX:0, scaleY:0, ease:Back.easeIn});
+			TweenLite.to(_loaderHolder, .4, {delay:.4, scaleX:1, scaleY:1, ease:Back.easeInOut});
+		} else {
+			TweenLite.to(_loaderHolder, .4, {alpha:1, scaleX:1, scaleY:1, ease:Back.easeOut});
+		}
+		
+	}
+	
+	override public function get width():Number
+	{
+		return 125;
 	}
 }
