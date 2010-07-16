@@ -12,6 +12,7 @@ package
 	public class DC extends Sprite
 	{
 		public static var externalXML:String = "";
+		public static var logoURL:String = "";
 		
 		public function DC()
 		{
@@ -27,6 +28,12 @@ package
 				externalXML = this.loaderInfo.parameters.xmlURL as String;
 			} else {
 				externalXML = "http://hwhat.com/dc/xml/sample.xml";	
+			}
+			
+			if (this.loaderInfo.parameters.logoURL) {
+				logoURL = this.loaderInfo.parameters.logoURL as String;
+			} else {
+				logoURL = "index.html";	
 			}
 			
 			MainFacade.getInstance().init( this.stage );

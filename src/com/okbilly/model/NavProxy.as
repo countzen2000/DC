@@ -60,6 +60,7 @@ package com.okbilly.model
 		{
 			_loader = new URLLoader();
 			_loader.addEventListener(Event.COMPLETE, onLoaded);
+			trace (DC.externalXML);
 			_loader.load(new URLRequest(DC.externalXML));
 		}
 		

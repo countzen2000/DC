@@ -1,39 +1,48 @@
 <dc>
-<menuObject name="ALL CEREMICS" id="1">
-	<item name="Cement Retained Crowns" id="1">
-		<imageurl>http://hwhat.com/dc/images/1.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+<menuObject name="ALL CERAMICS" id="1">
+
+	<item name="Lava™" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/lava2.png</imageurl>
+		<linkurl>ceramics/lava.html/</linkurl>
 	</item>
-	<item name="Screw Retained Crowns" id="2">
-		<imageurl>http://hwhat.com/dc/images/2.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="Procera" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/procera.png</imageurl>
+		<linkurl>ceramics/procera.html</linkurl>
 	</item>
-	<item name="Overdentures" id="3">
-		<imageurl>http://hwhat.com/dc/images/3.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="Empress/e.max" id="3">
+		<imageurl>http://hwhat.com/dc/images/nav/empress.png</imageurl>
+		<linkurl>ceramics/empress.html</linkurl>
 	</item>
-	<item name="Surgical CT Guides" id="4">
-		<imageurl>http://hwhat.com/dc/images/4.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="N.Dura Full" id="4">
+		<imageurl>http://hwhat.com/dc/images/nav/ndura.png</imageurl>
+		<linkurl>ceramics/ndura.html</linkurl>
 	</item>
-	<item name="CAD/CAM Milled Bars" id="5">
-		<imageurl>http://hwhat.com/dc/images/5.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="DVS" id="5">
+		<imageurl>http://hwhat.com/dc/images/nav/dvs_complete.png</imageurl>
+		<linkurl>ceramics/dvs.html</linkurl>
 	</item>
-	<item name="Conventional" id="6">
-		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="Felspathic" id="6">
+		<imageurl>http://hwhat.com/dc/images/nav/felsapathic.png</imageurl>
+		<linkurl>ceramics/felsapathic.htm</linkurl>
+	</item>
+	<item name="Felspathic" id="7">
+		<imageurl>http://hwhat.com/dc/images/nav/ceramic_maryland.png</imageurl>
+		<linkurl>ceramics/maryland.html/</linkurl>
 	</item>
 </menuObject>
+
+
 <menuObject name="PFM/FULL CAST" id="2">
-	<item name="Cement Retained Crowns" id="1">
-		<imageurl>http://hwhat.com/dc/images/1.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+
+	<item name="Porcelain Fused to Metal" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/porcelainfused.png</imageurl>
+		<linkurl>pfm/porcelain.html</linkurl>
 	</item>
-	<item name="Screw Retained Crowns" id="2">
-		<imageurl>http://hwhat.com/dc/images/2.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="Inlay/Onlay" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/2.png</imageurl>
+		<linkurl>pfm/inlay.html</linkurl>
 	</item>
+<<<<<<< HEAD
 	<item name="Overdentures" id="3">
 		<imageurl>http://hwhat.com/dc/images/3.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
@@ -49,70 +58,117 @@
 	<item name="Conventional" id="6">
 		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+=======
+	<item name="Full Cast Crowns" id="3">
+		<imageurl>http://hwhat.com/dc/images/nav/3.png</imageurl>
+		<linkurl>pfm/fullcast.html</linkurl>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
 	</item>
 </menuObject>
+
+
 <menuObject name="IMPLANTS" id="3">
+
 	<item name="Cement Retained Crowns" id="1">
-		<imageurl>http://hwhat.com/dc/images/1.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+		<imageurl>http://hwhat.com/dc/images/nav/implant_cement.png</imageurl>
+		<linkurl>implants/screw.html/</linkurl>
 	</item>
 	<item name="Screw Retained Crowns" id="2">
-		<imageurl>http://hwhat.com/dc/images/2.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+		<imageurl>http://hwhat.com/dc/images/nav/screw_crown.png</imageurl>
+		<linkurl>implants/screw.html</linkurl>
 	</item>
 	<item name="Overdentures" id="3">
-		<imageurl>http://hwhat.com/dc/images/3.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+		<imageurl>http://hwhat.com/dc/images/nav/overdenture.png</imageurl>
+		<linkurl>implants/overdentures.html</linkurl>
 	</item>
 	<item name="Surgical CT Guides" id="4">
-		<imageurl>http://hwhat.com/dc/images/4.png</imageurl>
+		<imageurl>http://hwhat.com/dc/images/nav/cadcam.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
 	</item>
 	<item name="CAD/CAM Milled Bars" id="5">
-		<imageurl>http://hwhat.com/dc/images/5.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+		<imageurl>http://hwhat.com/dc/images/nav/cadcam.png</imageurl>
+		<linkurl>implants/cammilled.html/</linkurl>
 	</item>
-	<item name="Conventional" id="6">
-		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="Surgical CT Guides" id="6">
+		<imageurl>http://hwhat.com/dc/images/nav/surgicalct.png</imageurl>
+		<linkurl>implants/surgical.html</linkurl>
 	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+<<<<<<< HEAD
+=======
+	<item name="Conventional Surgical Guides" id="7">
+		<imageurl>http://hwhat.com/dc/images/nav/2.png</imageurl>
+		<linkurl>implants/conventional.html</linkurl>
 	</item>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
 </menuObject>
+
+
 <menuObject name="SNORING/SLEEP APENA" id="4">
-	<item name="Cement Retained Crowns" id="1">
-		<imageurl>http://hwhat.com/dc/images/1.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+
+	<item name="IST" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/iST.png</imageurl>
+		<linkurl>snoring/ist.html</linkurl>
 	</item>
-	<item name="Screw Retained Crowns" id="2">
-		<imageurl>http://hwhat.com/dc/images/2.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="Overdentures" id="3">
-		<imageurl>http://hwhat.com/dc/images/3.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="Surgical CT Guides" id="4">
-		<imageurl>http://hwhat.com/dc/images/4.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="CAD/CAM Milled Bars" id="5">
-		<imageurl>http://hwhat.com/dc/images/5.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="Conventional" id="6">
-		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
+	<item name="TAP&reg;" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/tap.png</imageurl>
+		<linkurl>snoring/tap.html</linkurl>
 	</item>
 </menuObject>
+
+
+<menuObject name="DENTURES, RPDs/OTHER" id="5">
+
+	<item name="Complete" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/complete.png</imageurl>
+		<linkurl>dentures/complete.html</linkurl>
+	</item>
+	<item name="Partial" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/partial_under.png</imageurl>
+		<linkurl>dentures/partial.html</linkurl>
+	</item>
+	<item name="Nightguards" id="3">
+		<imageurl>http://hwhat.com/dc/images/nav/nightguard.png</imageurl>
+		<linkurl>dentures/nightguards.html</linkurl>
+	</item>
+	<item name="Splints" id="4">
+		<imageurl>http://hwhat.com/dc/images/nav/nightguard.png</imageurl>
+		<linkurl>dentures/soplints.html</linkurl>
+	</item>
+</menuObject>
+
+<menuObject name="DIAGNOSTIC WAX UP/PROVISION" id="6">
+
+	<item name="Diagnostic Wax-Up" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/diagnostic.png</imageurl>
+		<linkurl>diagnostic/diagnostic.html</linkurl>
+	</item>
+	<item name="Temporary Crowns" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/1.png</imageurl>
+		<linkurl>diagnostic/temporary.html</linkurl>
+	</item>
+	<item name="Stints" id="3">
+		<imageurl>http://hwhat.com/dc/images/nav/stint.png</imageurl>
+		<linkurl>diagnostic/stints.html</linkurl>
+	</item>
+<<<<<<< HEAD
+=======
+	<item name="Reduction Guides" id="4">
+		<imageurl>http://hwhat.com/dc/images/nav/6.png</imageurl>
+		<linkurl>diagnostic/reduction.html</linkurl>
+	</item>
+</menuObject>
+
+<menuObject name="COMPOSITES" id="7">
+
+	<item name="Sinfony" id="1">
+		<imageurl>http://hwhat.com/dc/images/nav/comp_sinfony.png</imageurl>
+		<linkurl>composites/sinfony.html</linkurl>
+	</item>
+	<item name="Maryland Bridge" id="2">
+		<imageurl>http://hwhat.com/dc/images/nav/comp_maryland.png</imageurl>
+		<linkurl>composites/maryland.html</linkurl>
+	</item>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
+</menuObject>
+
 </dc>

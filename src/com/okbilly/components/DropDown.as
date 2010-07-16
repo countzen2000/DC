@@ -74,6 +74,7 @@ import com.greensock.easing.Expo;
 import com.okbilly.model.dto.ItemDTO;
 import com.okbilly.utilities.EmbededTextField;
 
+import flash.display.Bitmap;
 import flash.display.Loader;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -100,6 +101,7 @@ internal class Item extends Sprite
 	private var _loadingTextHolder:Sprite;
 	
 	private var _loadingText:EmbededTextField;
+	private var _loaderHolder:Sprite;
 	
 	public function Item(data:ItemDTO)
 	{
@@ -162,11 +164,13 @@ internal class Item extends Sprite
 	
 	private function onOver(e:Event):void
 	{
-		this.filters = [new GlowFilter(0xffffff,1,3,3,1,3)];
+		//this.filters = [new GlowFilter(0xffffff,1,3,3,1,3)];
+		TweenLite.to(_loaderHolder, .3, {scaleX:1.4, scaleY:1.4, ease:Back.easeInOut});
 	}
 	private function onOut(e:Event):void
 	{
-		this.filters = [];
+		//this.filters = [];
+		TweenLite.to(_loaderHolder, .3, {alpha:1, scaleX:1, scaleY:1, ease:Back.easeOut});
 	}
 	
 	private function onClick(e:Event):void
@@ -184,10 +188,11 @@ internal class Item extends Sprite
 			_loader.scaleX -= .1;
 			_loader.scaleY -= .1;
 		}
+		(_loader.content as Bitmap).smoothing = true;
 		_loader.x = -_loader.width/2;
 		_loader.y = -_loader.height/2;
 		
-		var _loaderHolder:Sprite = new Sprite();
+		_loaderHolder = new Sprite();
 		_loaderHolder.x = _loader.width/2;
 		_loaderHolder.y = _loader.height/2;
 		_loaderHolder.addChild(_loader);

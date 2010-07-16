@@ -42,9 +42,27 @@
 		<imageurl>http://hwhat.com/dc/images/nav/2.png</imageurl>
 		<linkurl>pfm/inlay.html</linkurl>
 	</item>
+<<<<<<< HEAD
+	<item name="Overdentures" id="3">
+		<imageurl>http://hwhat.com/dc/images/3.png</imageurl>
+		<linkurl>http://www.google.com/</linkurl>
+	</item>
+	<item name="Surgical CT Guides" id="4">
+		<imageurl>http://hwhat.com/dc/images/4.png</imageurl>
+		<linkurl>http://www.google.com/</linkurl>
+	</item>
+	<item name="CAD/CAM Milled Bars" id="5">
+		<imageurl>http://hwhat.com/dc/images/5.png</imageurl>
+		<linkurl>http://www.google.com/</linkurl>
+	</item>
+	<item name="Conventional" id="6">
+		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
+		<linkurl>http://www.google.com/</linkurl>
+=======
 	<item name="Full Cast Crowns" id="3">
 		<imageurl>http://hwhat.com/dc/images/nav/3.png</imageurl>
 		<linkurl>pfm/fullcast.html</linkurl>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
 	</item>
 </menuObject>
 
@@ -75,10 +93,13 @@
 		<imageurl>http://hwhat.com/dc/images/nav/surgicalct.png</imageurl>
 		<linkurl>implants/surgical.html</linkurl>
 	</item>
+<<<<<<< HEAD
+=======
 	<item name="Conventional Surgical Guides" id="7">
 		<imageurl>http://hwhat.com/dc/images/nav/2.png</imageurl>
 		<linkurl>implants/conventional.html</linkurl>
 	</item>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
 </menuObject>
 
 
@@ -129,6 +150,8 @@
 		<imageurl>http://hwhat.com/dc/images/nav/stint.png</imageurl>
 		<linkurl>diagnostic/stints.html</linkurl>
 	</item>
+<<<<<<< HEAD
+=======
 	<item name="Reduction Guides" id="4">
 		<imageurl>http://hwhat.com/dc/images/nav/6.png</imageurl>
 		<linkurl>diagnostic/reduction.html</linkurl>
@@ -145,6 +168,7 @@
 		<imageurl>http://hwhat.com/dc/images/nav/comp_maryland.png</imageurl>
 		<linkurl>composites/maryland.html</linkurl>
 	</item>
+>>>>>>> 101397fc09327cb0d08c4e89e44d671abb3f63a8
 </menuObject>
 
 </dc>
