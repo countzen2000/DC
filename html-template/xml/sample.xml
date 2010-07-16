@@ -50,10 +50,6 @@
 		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
 	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
 </menuObject>
 <menuObject name="IMPLANTS" id="3">
 	<item name="Cement Retained Crowns" id="1">
@@ -80,10 +76,6 @@
 		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
 	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
 </menuObject>
 <menuObject name="SNORING/SLEEP APENA" id="4">
 	<item name="Cement Retained Crowns" id="1">
@@ -108,10 +100,6 @@
 	</item>
 	<item name="Conventional" id="6">
 		<imageurl>http://hwhat.com/dc/images/6.png</imageurl>
-		<linkurl>http://www.google.com/</linkurl>
-	</item>
-	<item name="TBD" id="7">
-		<imageurl>http://hwhat.com/dc/images/7.png</imageurl>
 		<linkurl>http://www.google.com/</linkurl>
 	</item>
 </menuObject>
