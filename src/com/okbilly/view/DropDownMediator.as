@@ -27,7 +27,10 @@ package com.okbilly.view
 		
 		override public function listNotificationInterests():Array
 		{
-			return [MainFacade.MENU_SELECTED];
+			return [
+				MainFacade.MENU_SELECTED,
+				MainFacade.MENU_UNSELECTED
+			];
 		}
 		
 		override public function handleNotification(notification:INotification):void
@@ -36,13 +39,16 @@ package com.okbilly.view
 				case MainFacade.MENU_SELECTED:
 					if (drop.y == 125) {
 						drop.hide()
-						hideDrop();
+						drop.y = -30;
 						setTimeout(drop.build, 150, (notification.getBody() as MenuDTO).Items);
 						setTimeout(showDrop, 100);
 					} else {
 						setTimeout(drop.build, 300, (notification.getBody() as MenuDTO).Items);
 						showDrop();
 					}
+					break;
+				case MainFacade.MENU_UNSELECTED:
+					hideDrop();
 					break;
 			}	
 		}
@@ -55,8 +61,8 @@ package com.okbilly.view
 		
 		public function hideDrop():void
 		{
-			//TweenLite.to(drop, .1, {y: 0, ease:Quad.easeOut});
-			drop.y = 0;
+			TweenLite.to(drop, .3, {y: -30});
+			//drop.y = -30;;
 		}
 		
 		public function get drop():DropDown

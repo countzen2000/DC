@@ -53,7 +53,7 @@ package com.okbilly.view
 			stage.addChild(nav);
 			
 			var drop:DropDown = (facade.retrieveMediator(DropDownMediator.NAME) as DropDownMediator).drop;
-			drop.y = 0;
+			drop.y = -30;
 			drop.x = header.x + 16;
 			stage.addChildAt(drop, stage.getChildIndex(header));
 		}
@@ -83,6 +83,7 @@ package com.okbilly.view
 			
 			var drop:DropDown = (facade.retrieveMediator(DropDownMediator.NAME) as DropDownMediator).drop;
 			drop.x = header.x + 16;
+			drop.y = -30;
 		}
 	}
 }

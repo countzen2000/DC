@@ -14,7 +14,8 @@ package com.okbilly
 		
 		public static var instance:MainFacade
 		public static const INIT:String = "InitialzeCOmmand";
-		public static const MENU_SELECTED:String = "MenuItemSelected"; 
+		public static const MENU_SELECTED:String = "MenuItemSelected";
+		public static const MENU_UNSELECTED:String = "MenuItemUnSelected";
 		public static const DATA_READY:String = "DataReady";
 		
 		public function MainFacade()

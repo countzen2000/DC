@@ -88,12 +88,13 @@ package com.okbilly.components {
 		private function onOut(e:Event):void
 		{
 			//_text.filters = [];
-			this.removeChild(_overview)
+			this.removeChild(_overview);
+			this.dispatchEvent(new DynamicEvent(NavMediator.MENU_UNCHOOSE_EVENT, true, true));
 		}
 		
 		private function onClick(e:Event):void
 		{
-			this.dispatchEvent(new DynamicEvent(NavMediator.MENU_CHOOSE_EVENT, true, true, _data));
+			this.dispatchEvent(new DynamicEvent(NavMediator.MENU_LOCKED_EVENT, true, true, _data));
 		}
 		
 		
