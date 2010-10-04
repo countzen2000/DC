@@ -83,7 +83,7 @@ package com.okbilly.view
 			}
 			e.stopImmediatePropagation();
 			this.sendNotification(MainFacade.MENU_SELECTED, e.data);
-			_intervalTimer = setTimeout(onTimeOutHide, 3000);
+			//_intervalTimer = setTimeout(onTimeOutHide, 3000);
 		}
 		
 		private function onMove(e:Event):void
@@ -91,7 +91,7 @@ package com.okbilly.view
 			if (_intervalTimer) {
 				clearInterval(_intervalTimer);
 			}
-			_intervalTimer = setTimeout(onTimeOutHide, 3000);
+			//_intervalTimer = setTimeout(onTimeOutHide, 3000);
 		}
 		
 		private function onTimeOutHide():void

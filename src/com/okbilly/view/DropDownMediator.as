@@ -10,6 +10,8 @@ package com.okbilly.view
 	import com.okbilly.components.DropDown;
 	import com.okbilly.model.dto.MenuDTO;
 	
+	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.utils.setTimeout;
 	
 	import org.puremvc.as3.multicore.interfaces.IMediator;
@@ -25,6 +27,10 @@ package com.okbilly.view
 			super(NAME, viewComponent);
 		}
 		
+		override public function onRegister():void
+		{
+			drop.addEventListener(MouseEvent.ROLL_OUT, onOut);
+		}
 		override public function listNotificationInterests():Array
 		{
 			return [
@@ -68,6 +74,11 @@ package com.okbilly.view
 		public function get drop():DropDown
 		{
 			return viewComponent as DropDown
+		}
+		
+		private function onOut(e:Event):void
+		{
+			this.sendNotification(MainFacade.MENU_UNSELECTED);
 		}
 	}
 }

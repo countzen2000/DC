@@ -27,7 +27,7 @@ package
 			if (this.loaderInfo.parameters.xmlURL) {
 				externalXML = this.loaderInfo.parameters.xmlURL as String;
 			} else {
-				externalXML = "http://hwhat.com/dc/xml/sample.xml";	
+				externalXML = "http://www.nim-bl.com/markup/flash/xml/sample.xml";	
 			}
 			
 			if (this.loaderInfo.parameters.logoURL) {
